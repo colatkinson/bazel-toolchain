@@ -120,7 +120,7 @@ def conditional_cc_toolchain(name, darwin, absolute_paths = False):
             toolchain_config = toolchain_config,
         )
     else:
-        extra_files = [":cc_wrapper"] if darwin else []
+        extra_files = [":cc_wrapper"] if darwin or True else []
         native.filegroup(name = name + "-all-files", srcs = [":all_components"] + extra_files)
         native.filegroup(name = name + "-archiver-files", srcs = [":ar"] + extra_files)
         native.filegroup(name = name + "-assembler-files", srcs = [":as"] + extra_files)

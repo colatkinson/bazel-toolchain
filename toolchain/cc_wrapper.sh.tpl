@@ -53,10 +53,14 @@ done
 
 
 # Call the C++ compiler.
+echo "WE ARE HERE: $PATH"
 if [[ "${PATH}:" == *"%{toolchain_path_prefix}bin:"* ]]; then
   # GoCompile sets the PATH to the directory containing the linker, and changes CWD.
   clang "$@"
 else
+  echo "YARP"
+  export PATH="%{toolchain_path_prefix}bin:$PATH"
+  which ld.lld
   %{toolchain_path_prefix}bin/clang "$@"
 fi
 

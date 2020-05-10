@@ -568,7 +568,8 @@ def _impl(ctx):
             tool_path(name = "strip", path = "/usr/bin/strip"),
             tool_path(
                 name = "gcc",
-                path = "%{tools_path_prefix}bin/clang",
+                # path = "%{tools_path_prefix}bin/clang",
+                path = "%{tools_path_prefix}bin/cc_wrapper.sh",
             ),
             tool_path(
                 name = "ar",
