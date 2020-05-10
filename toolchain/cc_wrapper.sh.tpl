@@ -57,6 +57,7 @@ if [[ "${PATH}:" == *"%{toolchain_path_prefix}bin:"* ]]; then
   # GoCompile sets the PATH to the directory containing the linker, and changes CWD.
   clang "$@"
 else
+  export PATH="%{toolchain_path_prefix}bin:$PATH"
   %{toolchain_path_prefix}bin/clang "$@"
 fi
 
