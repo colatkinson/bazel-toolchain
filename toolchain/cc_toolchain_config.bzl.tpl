@@ -153,8 +153,6 @@ def _impl(ctx):
             "-l:libc++.a",
             "-l:libc++abi.a",
             "-l:libunwind.a",
-            # Compiler runtime features.
-            "-rtlib=compiler-rt",
             # To support libunwind.
             "-lpthread",
             "-ldl",
